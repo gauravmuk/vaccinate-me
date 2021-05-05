@@ -17,8 +17,6 @@ async function getXHRData(url) {
       headers: {
         accept: "application/json, text/plain, */*",
         "accept-language": "en",
-        "cache-control": "no-cache",
-        pragma: "no-cache",
         "sec-ch-ua":
           '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
         "sec-ch-ua-mobile": "?0",
@@ -26,15 +24,14 @@ async function getXHRData(url) {
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "cross-site",
         "sec-fetch-user": "?1",
-        "upgrade-insecure-requests": "1",
         "user-agent":
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36",
       },
-      referrer: "https://www.cowin.gov.in/",
       referrerPolicy: "strict-origin-when-cross-origin",
       body: null,
       method: "GET",
       mode: "cors",
+      credentials: "omit",
     });
 
     console.log(url, data.status);
