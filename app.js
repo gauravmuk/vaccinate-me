@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-    let data = await fetch(`.netlify/functions/vaccinate`);
-    data = data.json();
+document.addEventListener("DOMContentLoaded", async () => {
+  let data = await fetch(`.netlify/functions/vaccinate`);
+  data = data.json();
+  console.log(data);
 });

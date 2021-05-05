@@ -46,7 +46,7 @@ async function getXHRData(url) {
   }
 }
 
-exports.handler = async function () {
+exports.handler = async function (event, context) {
   try {
     const finalCenters = [];
     const finalDates = [];
