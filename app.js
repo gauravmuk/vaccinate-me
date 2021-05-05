@@ -112,11 +112,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       for (let i = 0; i < finalCenters.length; i++) {
         html += `<tr>
-      <th scope="row">${i + 1}</th>
-      <td>${data[i].name}</td>
-      <td>${data[i].pincode}</td>
-      <td>${data[i].address}</td>
-    </tr>`;
+        <th scope="row">${i + 1}</th>
+        <td>${data[i].name}</td>
+        <td>${data[i].pincode}</td>
+        <td>${data[i].address}</td>
+      </tr>`;
       }
 
       document.querySelector("tbody").innerHTML = html;
