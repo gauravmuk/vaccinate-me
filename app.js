@@ -29,7 +29,7 @@ async function getXHRData(url) {
       body: null,
       method: "GET",
       mode: "cors",
-      "credentials": "omit"
+      credentials: "omit",
     });
 
     console.log(url, data.status);
@@ -49,11 +49,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const finalCenters = [];
     const finalDates = [];
-    
 
     const params = new URLSearchParams(window.location.search);
-    const age = parseInt(params.get('age'), 10) || 18;
-    const days = parseInt(params.get('days'), 10) || 3;
+    const age = parseInt(params.get("age"), 10) || 18;
+    const days = parseInt(params.get("days"), 10) || 3;
 
     console.log(age, days);
 
@@ -103,6 +102,10 @@ document.addEventListener("DOMContentLoaded", async () => {
           }
         }
       }
+    }
+
+    if (!(finalCenters && finalCenters.length)) {
+      document.querySelector("#alert-box-happy").classList.remove("d-none");
     }
 
     let html = "";
