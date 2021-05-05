@@ -17,7 +17,6 @@ async function getXHRData(url) {
         "accept-language": "en",
         "Access-Control-Allow-Headers": "GET",
         "cache-control": "no-cache",
-        pragma: "no-cache",
         "sec-ch-ua":
           '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
         "sec-ch-ua-mobile": "?0",
