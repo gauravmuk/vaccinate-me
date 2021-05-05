@@ -15,8 +15,6 @@ async function getXHRData(url) {
       headers: {
         accept: "application/json, text/plain, */*",
         "accept-language": "en",
-        "Access-Control-Allow-Headers": "GET",
-        "cache-control": "no-cache",
         "sec-ch-ua":
           '" Not A;Brand";v="99", "Chromium";v="90", "Google Chrome";v="90"',
         "sec-ch-ua-mobile": "?0",
@@ -24,7 +22,6 @@ async function getXHRData(url) {
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "cross-site",
         "sec-fetch-user": "?1",
-        "upgrade-insecure-requests": "1",
         "user-agent":
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36",
       },
@@ -52,7 +49,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const finalCenters = [];
     const finalDates = [];
-    const days = 7;
+    
+
+    const params = new URLSearchParams(window.location.search);
+    const age = parseInt(params.age, 10) || 18;
+    const days = parseInt(params.days, 10) || 3;
+
+    console.log(age, days);
 
     for (let i = 1; i <= days; i++) {
       finalDates.push(getDate(i));
@@ -85,7 +88,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               const sessions = centers[i].sessions.filter(
                 (session) =>
                   session.vaccine.toUpperCase() === "COVISHIELD" &&
-                  session.min_age_limit === 18 &&
+                  session.min_age_limit === age &&
                   session.available_capacity >= 3
               );
 
