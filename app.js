@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     
 
     const params = new URLSearchParams(window.location.search);
-    const age = parseInt(params.age, 10) || 18;
-    const days = parseInt(params.days, 10) || 3;
+    const age = parseInt(params.get('age'), 10) || 18;
+    const days = parseInt(params.get('days'), 10) || 3;
 
     console.log(age, days);
 
